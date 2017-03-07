@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Events for Thursday(16th March 2017) ONLY FOR Preparatory classes 1{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="{{ asset('bundles/eventsevents/css/style.css') }}" type="text/css" rel="stylesheet"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            <p>Logged in as <b>{{ app.user.username }}</b>({{app.user.email}})<a style="padding-left: 50px;" href="{{path('fos_user_security_logout')}}">Logout</a></p>
+              <div id="main">
+{% block content %}
+    <p>Please register for the events to be held on <b>Thursday(16th March 2017)</b></p>
+    <ul>
+        <li>Choose two conferences among the below list of 6 (but not two at the same time):</li>        
+        <li>Maximum 2 events per student</li>
+    </ul>
+    {% for flashMessage in app.session.flashbag.get('error') %}        
+    <div class="flash-error">
+        {{ flashMessage }}
+    </div>
+    {% endfor %}
+    <div class="candidatecontent">            
+    <div id="form">                         
+     <br>
+     <form action="{{ path('eventone') }}" method="post" {{ form_enctype(form) }} name="eventone">
+            <table>       
+                
+                    {# Event type 1 #}
+                    <tr>
+                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype1) }}</b></div></td>
+                        <td>{{ form_widget(form.eventtype1) }}</td>
+                        <td><span class="errors">{{ form_errors(form.eventtype1) }}</span></td>
+                    </tr>                   
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    {# Event type 2 #}
+                    <tr>
+                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype2) }}</b></div></td>
+                        <td>{{ form_widget(form.eventtype2) }}</td>
+                        <td><span class="errors">{{ form_errors(form.eventtype2) }}</span></td>
+                    </tr>                   
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    
+                    {# Event type 3 #}
+                    <tr>
+                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype3) }}</b></div></td>
+                        <td>{{ form_widget(form.eventtype3) }}</td>
+                        <td><span class="errors">{{ form_errors(form.eventtype3) }}</span></td>
+                    </tr>                   
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>             
+                    {# Event type 4 #}
+                   {# <tr>
+                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype4) }}</b></div></td>
+                        <td>{{ form_widget(form.eventtype4) }}</td>
+                        <td><span class="errors">{{ form_errors(form.eventtype4) }}</span></td>
+                    </tr>                   
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>    #}         
+            </table>            
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="padding-left: 50px;padding-top: 10px;"><input type="submit" value="Submit" id="submit"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+{{ form_end(form) }}            
+            </div>         
+             </div>
+            {% endblock content %}   
+            </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,4 @@
+FirstName|LastName|Epita Login |Email|Thursday(10 am - 11 am)|Thursday(11 am - 12 pm)|Thursday(12pm  - 1 pm)|Thursday(1 pm - 2 pm)|<br>
+{% for row in data %}
+{{row.user.firstname}} | {{row.user.lastname}} | {{row.user.username }} | {{row.user.email}} | {% if row.eventtype1 is null %} null {% else %} {{ row.eventtype1.description }} {% endif %}  | {% if row.eventtype2 is null %} {% else %} {{ row.eventtype2.description }} {% endif %}| {% if row.eventtype3.id == 15 %} {{ row.eventtype3.description }} {% else %} None {% endif %} | {% if row.eventtype3.id == 16 %} {{ row.eventtype3.description }} {% else %} None {% endif %} |<br>
+{% endfor %}

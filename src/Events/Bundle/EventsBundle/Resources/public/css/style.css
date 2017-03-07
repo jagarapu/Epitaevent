@@ -1,0 +1,29 @@
+/* 
+    Document   : style
+    Created on : Mar 30, 2014, 12:15:18 PM
+    Author     : Mehul
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.flash-success {
+    background-color: #9AE711;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+}
+
+.flash-warning {
+    color: #FFF;
+    background-color: #fac32c;
+}
+
+.flash-error {
+    color: #FFF;
+    background-color: #f7541c;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+}

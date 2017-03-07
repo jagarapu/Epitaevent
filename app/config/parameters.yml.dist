@@ -1,0 +1,19 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     epitaeventsing2.mysql.eu2.frbit.com
+    database_port:     3306
+    database_name:     epitaeventsing2
+    database_user:     epitaeventsing2
+    database_password: Le.fPnkIXtTOt3zeZ-TA+GwT
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    debug_toolbar:          true
+    debug_redirects:        false
+    use_assetic_controller: true

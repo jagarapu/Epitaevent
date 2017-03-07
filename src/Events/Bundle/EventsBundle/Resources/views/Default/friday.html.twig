@@ -1,0 +1,4 @@
+First Name|Last Name| Epita Login |Email|Friday(11 am - 12 noon)|Friday(2pm - 3pm)|Friday(4 pm - 5 pm)|<br>
+{% for row in data %}
+{{row.user.firstname}} |{{ row.user.lastname}}| {{row.user.username}} | {{row.user.email}} | {% if row.eventtype8 is null %} null {% else %} {{ row.eventtype8.description }} {% endif %}  | {% if row.eventtype9 is null %} null {% else %} {{ row.eventtype9.description }} {% endif %}| {% if row.eventtype10 is null %} NULL {% else %} {{ row.eventtype10.description }} {% endif %} |<br>
+{% endfor %}

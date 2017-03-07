@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}EPITA International Week - 2017 FOR Preparatory Classes 1{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="{{ asset('bundles/eventsevents/css/style.css') }}" type="text/css" rel="stylesheet"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+         {% block body %}            
+            <p>Logged in as <b>{{ app.user.username }}</b>({{app.user.email}})<a style="padding-left: 50px;" href="{{path('fos_user_security_logout')}}">Logout</a></p>            
+            <p><b>EPITA International Week - 2017 Events Registration ONLY FOR Preparatory Classes 1 STUDENTS</b></p> 
+                {% for flashMessage in app.session.flashbag.get('success') %}        
+                    <div class="flash-success">
+                        {{ flashMessage }}
+                     </div>
+                {% endfor %}
+            <p><b>Register for events held on Thursday, 16th March 2017 </b>&nbsp;<a href="{{path('eventone')}}">Click here!</a></p>
+           
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

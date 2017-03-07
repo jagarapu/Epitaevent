@@ -1,0 +1,26 @@
+INSERT INTO event(id,name,start_time,end_time) VALUES (1,'Préparation au choc culturel 1','2pm', '3:30pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(2,'Study Abroad at CSUMB','2pm', '3pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(3,'Préparation au choc culturel 2','4pm', '5:30pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(4,'Study Abroad at Stafford','4pm', '5pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(5,'Study Abroad at Griffith College Dublin','2pm', '3pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(6,'Study Abroad at Boston University','2pm', '3pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(7,'Study Abroad at Ahlia University','2pm', '3pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(8,'Préparation au choc culturel 3','2pm', '3:30pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(9,'Study Abroad at CSU-Channel Islands','4pm', '5pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(10,'Study Abroad at Oxford Brookes','4pm', '5pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(11,'Préparation au choc culturel 4','4 pm', '5:30pm');
+INSERT INTO event(id,name,start_time,end_time) VALUES(12,'None','', '');
+
+//Event type
+INSERT INTO eventtype(id,description,location) VALUES (1,'Préparation au choc culturel 1','');
+INSERT INTO eventtype(id,description,location) VALUES(2,'Study Abroad at CSUMB','');
+INSERT INTO eventtype(id,description,location) VALUES(3,'Préparation au choc culturel 2','');
+INSERT INTO eventtype(id,description,location) VALUES(4,'Study Abroad at Stafford','');
+INSERT INTO eventtype(id,description,location) VALUES(5,'Study Abroad at Griffith College Dublin','');
+INSERT INTO eventtype(id,description,location) VALUES(6,'Study Abroad at Boston University','');
+INSERT INTO eventtype(id,description,location) VALUES(7,'Study Abroad at Ahlia University','');
+INSERT INTO eventtype(id,description,location) VALUES(8,'Préparation au choc culturel 3','');
+INSERT INTO eventtype(id,description,location) VALUES(9,'Study Abroad at CSU-Channel Islands','');
+INSERT INTO eventtype(id,description,location) VALUES(10,'Study Abroad at Oxford Brookes','');
+INSERT INTO eventtype(id,description,location) VALUES(11,'Préparation au choc culturel 4','');
+INSERT INTO eventtype(id,description,location) VALUES(12,'None','');

@@ -1,0 +1,34 @@
+{% block title %}<p style="padding-left: 60px;"><b>Events Login Page</b></p>{% endblock title %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}    
+    <div id="main">
+{% block content %}
+<div class="candidatecontent">
+{% block fos_user_content %}
+{% if error %}
+        <div class="flash-error"><b style="color: red">{{ error|trans }}</b></div>
+{% endif %}
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+   {# <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />    #}
+       <br>
+       <b>Login id(Email address or EPITA login)</b> : <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+        <br>       
+        <br>
+        <b>Your password </b> : &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="password" name="_password" required="required" />
+        <br>
+        <br>
+        <div class="form-login"><input type="submit" id="_submit" name="_submit" value="Login" /></div>
+        <br>
+        <br>
+        <p>Forgot password ? Write to us at : epitaevents2017@gmail.com</p>
+        <br>
+        <br>
+        <a class="text_link" href="{{path('register')}}"> Register</a>
+        <br>
+        </form>        
+        {% endblock fos_user_content %}     
+         </div>
+{% endblock %} 
+            </div>
+{% endblock %}  

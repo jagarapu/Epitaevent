@@ -1,0 +1,80 @@
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% if not form.hasParent  or 'repeated' in form.get('types') %}
+           {% endif %}
+           <ul>
+            {% for error in errors %}
+                {% if loop.first %}
+              <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+                {% endif %}              
+            {% endfor %}
+            </ul>
+        {% if not form.hasParent  or 'repeated' in form.get('types') %}
+         {% endif %}
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+{% block checkbox_row %}
+{% spaceless %}
+      {{ form_errors(form) }}
+    <label for="{{ form.vars.id }}">     
+        {{ form_widget(form) }}
+        {{ label|default(form_label(form)) | raw }}        
+    </label>
+{% endspaceless %}
+{% endblock %}
+
+{% block field_row %}
+{% spaceless %}
+    <div>
+        {{ form_label(form, label|default(null)) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>             
+    {% if help is defined %}
+        <span style="color: #BFBFBF;font-size: 13px; line-height: 18px;  display: block; max-width: 600px;">{{ help }}</span>
+    {% endif %}            
+{% endspaceless %}
+{% endblock field_row %}
+
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_label %}
+    {{ parent() }}
+
+    {% if required %}
+        <span class="required" title="This field is required">*</span>
+    {% endif %}
+     {% if help is defined %}
+        <span style="">{{ help }}</span>
+    {% endif %}
+{% endblock %}
+        
+{% block captcha_widget %}
+    {% spaceless %}
+        {#<img src="{{ captcha_code }}" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" />#}
+        <img id="{{ image_id }}" src="{{ captcha_code }}" alt="" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" />
+        {% if reload %}
+	<script type="text/javascript">
+        function reload_{{ image_id }}() {
+            var img = document.getElementById('{{ image_id }}');
+            img.src = '{{ captcha_code }}?n=' + (new Date()).getTime();
+        }
+	</script>
+        &nbsp;<a class="captcha_reload" href="javascript:reload_{{ image_id }}();">{{ 'Refresh code'|trans({}, 'gregwar_captcha') }}</a>   
+        {% endif %}
+    <br/>
+    <br/>
+    {{ form_widget(form) }}
+    {% endspaceless %}
+{% endblock %} 
+    
+{% block form_widget_simple %}
+    {{ parent() }}
+
+    {% if help is defined %}
+        <span style="color: #BFBFBF;font-size: 12px; line-height: 16px;  display: block;">{{ help }}</span>
+    {% endif %}
+{% endblock %}

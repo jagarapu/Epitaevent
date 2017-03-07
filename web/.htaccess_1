@@ -1,0 +1,16 @@
+DirectoryIndex app.php
+
+RewriteEngine On
+
+# Route anything for http://yourdomain.tld/app.php/some/path
+RewriteCond %{REQUEST_URI} ^/app\.php/ [NC]
+RewriteRule ^app\.php/(.*)$    /app.php [NC,L,QSA,E=PATH_INFO:/$1]
+
+# Route anything for http://yourdomain.tld/app_dev.php/some/path
+RewriteCond %{REQUEST_URI} ^/app_dev\.php/ [NC]
+RewriteRule ^app_dev\.php/(.*)$    /app_dev.php [NC,L,QSA,E=PATH_INFO:/$1]
+
+# Route anything for http://yourdomain.tld/some/path to app.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$    /app.php [NC,L,QSA,E=PATH_INFO:/$1]

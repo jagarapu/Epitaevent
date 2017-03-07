@@ -1,0 +1,8 @@
+[19-Mar-2016 06:54:58 Europe/Paris] PHP Warning:  require(C:\Apache24\htdocs\epitaeventsing2\app/../vendor/autoload.php): failed to open stream: No such file or directory in C:\Apache24\htdocs\epitaeventsing2\app\autoload.php on line 9
+[19-Mar-2016 06:54:58 Europe/Paris] PHP Fatal error:  require(): Failed opening required 'C:\Apache24\htdocs\epitaeventsing2\app/../vendor/autoload.php' (include_path='.;C:\php\pear') in C:\Apache24\htdocs\epitaeventsing2\app\autoload.php on line 9
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:10] request.INFO: Matched route "eventtwo" (parameters: "_controller": "Events\Bundle\EventsBundle\Controller\DefaultController::eventtwoAction", "_route": "eventtwo") [] []
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:10] security.DEBUG: Read SecurityContext from the session [] []
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:10] security.DEBUG: Reloading user from user provider. [] []
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:10] security.DEBUG: Username "jain_m" was reloaded from user provider. [] []
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:11] security.DEBUG: Write SecurityContext in the session [] []
+[19-Mar-2016 08:24:14 Europe/Paris] [2016-03-19 08:24:14] app.ERROR: Exception occurred while flushing email queue: Connection could not be established with host smtp [php_network_getaddresses: getaddrinfo failed: No such host is known.  #0] [] []
