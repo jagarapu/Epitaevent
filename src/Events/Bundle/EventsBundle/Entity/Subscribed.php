@@ -41,49 +41,6 @@ class Subscribed {
      * 
      */
     private $eventtype3;
-    
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype4", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype4;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype5", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype5;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype6", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype6;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype7", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype7;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype8", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype8;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype9", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype9;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EventType")
-//     * @ORM\JoinColumn(name="eventtype10", referencedColumnName="id")
-//     * 
-//     */
-//    private $eventtype10;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")

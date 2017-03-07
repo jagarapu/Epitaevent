@@ -80,6 +80,6 @@ swiftmailer:
     spool:     { type: memory }
     
 parameters:
-    max_conferences1 : 140
-    max_conferences2 : 140
-    max_conferences3 : 140
+    max_conferences1 : 3
+    max_conferences2 : 3
+    max_conferences3 : 3
