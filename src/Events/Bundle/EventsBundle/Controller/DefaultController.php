@@ -10,6 +10,7 @@ use Events\Bundle\EventsBundle\Form\Type\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Events\Bundle\EventsBundle\Entity\Subscribed;
 use Events\Bundle\EventsBundle\Form\Type\EventoneType;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller {
 
@@ -276,6 +277,25 @@ class DefaultController extends Controller {
         $providerKey = $this->container->getParameter('fos_user.firewall_name');
         $token = new \Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken($user, null, $providerKey, $user->getRoles());
         $this->container->get('security.context')->setToken($token);
+    }
+    /**
+     *
+     * @Route("/export/thursday",name="exportthu")
+     *      
+     */
+    public function exportthuAction() {
+        $format = 'xls';
+        $filename = sprintf('export_students_prep1_thursday.%s', $format);
+        $data = array();
+        $em = $this->getDoctrine()->getEntityManager();
+        $query = $em->createQuery('SELECT s FROM Events\Bundle\EventsBundle\Entity\Subscribed s');
+        $data = $query->getResult();
+        $content = $this->renderView('EventsEventsBundle:Default:thursday.html.twig', array('data' => $data));
+        $response = new Response($content);
+        $response->headers->set('Content-Type', 'application/vnd.ms-excel');
+        $response->headers->set('Content-Disposition', 'attachment; filename=' . $filename);
+        $response->send();
+        return new Response($content);
     }
 
 }
