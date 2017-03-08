@@ -292,10 +292,9 @@ class DefaultController extends Controller {
         $data = $query->getResult();
         $content = $this->renderView('EventsEventsBundle:Default:thursday.html.twig', array('data' => $data));
         $response = new Response($content);
-        $response->headers->set('Content-Type', 'application/vnd.ms-excel');
+        $response->headers->set('Content-Type', 'application/vnd.ms-excel; charset=utf-8');
         $response->headers->set('Content-Disposition', 'attachment; filename=' . $filename);
-        $response->send();
-        return new Response($content);
+        return $response;
     }
 
 }
