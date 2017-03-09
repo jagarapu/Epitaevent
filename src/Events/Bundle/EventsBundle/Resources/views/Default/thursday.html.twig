@@ -1,6 +1,6 @@
 FirstName|LastName|Epita Login |Email|Thursday(2 pm - 3 pm)|Thursday(3 pm - 4 pm)|Thursday(4 pm  - 5 pm)<br>
 {% for row in data %}
-    {% autoescape %}
-{{row.user.firstname}} | {{row.user.lastname}} | {{row.user.username }} | {{row.user.email}} | {% if row.eventtype1 is null %} None {% else %} {{ row.eventtype1.description | raw }} {% endif %}  | {% if row.eventtype2 is null %}None {% else %} {{ row.eventtype2.description | raw}} {% endif %}| {% if row.eventtype3 is null %} None {% else %} {{ row.eventtype3.description | raw}} {% endif %} 
+{% autoescape %}
+{{row.user.firstname}}|{{row.user.lastname}}|{{row.user.username }}|{{row.user.email}}|{% if row.eventtype1 is null %}None{% else %}{{ row.eventtype1.description | raw }}{% endif %}|{% if row.eventtype2 is null %}None{% else %}{{ row.eventtype2.description | raw}}{% endif %}|{% if row.eventtype3 is null %}None{% else %}{{ row.eventtype3.description | raw}}{% endif %} 
 {% endautoescape %}
 {% endfor %}
