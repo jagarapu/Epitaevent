@@ -60,9 +60,9 @@ class User extends BaseUser {
      * 
      * @Assert\NotBlank( message = "Username should not be blank",groups={"registration"})
      * @Assert\Regex(
-     *      pattern="/[^a-zA-Z0-9-_]/",
+     *      pattern="/[^a-zA-Z0-9-_.]/",
      *      match = false,
-     *      message = "Username shoud not contain special characters other than - and _",groups={"registration"})
+     *      message = "Username shoud not contain special characters other than - and _and . ",groups={"registration"})
      * @Assert\Length(min=4,max=30,minMessage="Username must be atleast 4 characters",maxMessage="Username must be maximum 30 characters",groups={"registration"})
      */
     protected $username;
