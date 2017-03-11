@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Events\Bundle\EventsBundle\Entity\Subscribed;
 use Events\Bundle\EventsBundle\Form\Type\EventoneType;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller {
 
@@ -20,7 +21,7 @@ class DefaultController extends Controller {
      */
     public function indexAction() {
 
-        // return new RedirectResponse($this->generateUrl('closepage'));
+       return new RedirectResponse($this->generateUrl('closepage'));
         if ($this->get('security.context')->isGranted('ROLE_USER')) {
             return $this->redirect($this->generateUrl('securedhome'));
         }
@@ -42,7 +43,7 @@ class DefaultController extends Controller {
      */
     public function registerAction(Request $request) {
 
-        //return new RedirectResponse($this->generateUrl('closepage'));
+        return new RedirectResponse($this->generateUrl('closepage'));
 
         $em = $this->getDoctrine()->getManager();
         //Check to see if the user has already logged in
@@ -76,7 +77,7 @@ class DefaultController extends Controller {
      */
     public function homeAction(Request $request) {
 
-        // return new RedirectResponse($this->generateUrl('closepage'));
+        return new RedirectResponse($this->generateUrl('closepage'));
 
         $em = $this->getDoctrine()->getManager();
 
